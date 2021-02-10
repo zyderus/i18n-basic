@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Language page</title>
+  <style>
+    nav{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    ul {
+      display: flex;
+    }
+    li {
+      list-style: none;
+      padding-left: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h1>
+      <a href="javascript:void(0)"><button id="btn_home"><%= langstr.btn_home %> </button></a>
+      <a href="javascript:void(0)"><button id="btn_gallery"><%= langstr.btn_gallery %> </button></a>
+      <a href="javascript:void(0)"><button id="btn_aboutus"><%= langstr.btn_aboutus %> </button></a>
+      <a href="javascript:void(0)"><button id="btn_contacts"><%= langstr.btn_contacts %> </button></a>
+    </h1>
+    <ul>
+      <li><a href="javascript:void(0)" class="lang-control" id="en">eng</a></li>
+      <li><a href="javascript:void(0)" class="lang-control" id="ru">рус</a></li>
+      <li><a href="javascript:void(0)" class="lang-control" id="reset"><%= langstr.btn_reset %></a></li>
+    </ul>
+  </nav>
+  
+
+<script>
+  // send server json to js
+  // var data = JSON.parse('<%- langstr %>');
+  
+  var langData = JSON.stringify('<%- langstr %>');
+  console.log(langData);
+</script>
+<script src="script.js"></script>
+</body>
+</html>
